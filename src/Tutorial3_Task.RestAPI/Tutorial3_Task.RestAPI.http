@@ -1,0 +1,6 @@
+@Tutorial3_Task.RestAPI_HostAddress = http://localhost:5274
+
+GET {{Tutorial3_Task.RestAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
