@@ -15,15 +15,15 @@ public class DeviceController : ControllerBase
         _deviceManager = deviceManager;
     }
     [HttpGet]
-    public IResult getAllDevices()
+    public IResult GetAllDevices()
     {
-        var devices = _deviceManager.getAllDevices();
+        var devices = _deviceManager.GetAllDevices();
         return Results.Ok(devices);
     }
     [HttpGet("{id}")]
-    public IResult getDeviceById(string id)
+    public IResult GetDeviceById(string id)
     {
-        var device = _deviceManager.getDeviceById(id);
+        var device = _deviceManager.GetDeviceById(id);
         if (device == null)
         {
             return Results.NotFound();
@@ -33,7 +33,7 @@ public class DeviceController : ControllerBase
     [HttpDelete("{id}")]
     public IResult DeleteDevice(string id)
     {
-        var existingDevice = _deviceManager.getDeviceById(id);
+        var existingDevice = _deviceManager.GetDeviceById(id);
         if (existingDevice == null)
         {
             return Results.NotFound();

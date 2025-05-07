@@ -1,14 +1,16 @@
 using Tutorial3_Task;
+using Tutorial3_Task.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<IDeviceManager>(service =>
 {
+    IDeviceRepository deviceManager = service.GetService<IDeviceRepository>();
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     if (string.IsNullOrEmpty(connectionString))
     {
         throw new InvalidOperationException("Connection string 'UniversityDatabase' is not configured.");
     }
-    return new DeviceManager(connectionString);
+    return new DeviceManager(deviceManager);
 });
 
 // Add services to the container.

@@ -8,12 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Tutorial3_Task.Model\Tutorial3_Task.Model.csproj" />
-      <ProjectReference Include="..\Tutorial3_Task.Repository\Tutorial3_Task.Repository.csproj" />
+      <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
+      <ProjectReference Include="..\Tutorial3_Task.Model\Tutorial3_Task.Model.csproj" />
     </ItemGroup>
 
 </Project>
